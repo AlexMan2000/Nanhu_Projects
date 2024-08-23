@@ -1,0 +1,126 @@
+package {{PACKAGE_ID}};
+
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Rect;
+import android.graphics.drawable.ShapeDrawable;
+import android.graphics.drawable.shapes.OvalShape;
+import android.graphics.drawable.shapes.RectShape;
+import android.util.AttributeSet;
+import android.view.View;
+
+public class PageIndicatorView extends View {
+
+    public enum Type {
+        NONE,
+        DOTS,
+        TEXT
+    }
+
+    private static final int BACKGROUND_COLOR   = 0x99FFFFFF;
+    private static final int ACTIVE_DOT_COLOR   = 0xB2000000;
+    private static final int INACTIVE_DOT_COLOR = 0x54000000;
+    private static final int CURRENT_PAGE_COLOR = 0xE5000000;
+    private static final int PAGE_COUNT_COLOR   = 0x73000000;
+
+    private ShapeDrawable mBackgroundDrawable;
+    private ShapeDrawable mIndicatorDrawable;
+    private int mCurrentPage;
+    private int mPageCount;
+    private Type mType;
+
+    public PageIndicatorView(Context context) {
+        super(context);
+        init();
+    }
+
+    public PageIndicatorView(Context context, AttributeSet attrs) {
+        super(context, attrs);
+        init();
+    }
+
+    public PageIndicatorView(Context context, AttributeSet attrs, int defStyle) {
+        super(context, attrs, defStyle);
+        init();
+    }
+
+    private void init() {
+        mBackgroundDrawable = new ShapeDrawable(new RectShape());
+        Paint paint = mBackgroundDrawable.getPaint();
+        paint.setColor(BACKGROUND_COLOR);
+
+        mIndicatorDrawable = new ShapeDrawable(new OvalShape());
+    }
+
+    protected void onDraw(Canvas canvas) {
+        Paint paint;
+
+        switch (mType) {
+            case DOTS:
+                final int dotSize = canvas.getHeight() / 4;
+                final int dotInterval = dotSize * 2;
+
+                mIndicatorDrawable.setBounds(0, 0, dotSize, dotSize);
+
+                // center
+                canvas.translate((canvas.getWidth() - dotSize) * 0.5f, (canvas.getHeight() - dotSize) * 0.5f);
+                // offset to the first dot
+                canvas.translate(-(mPageCount - 1) * dotInterval * 0.5f, 0);
+
+                paint = mIndicatorDrawable.getPaint();
+
+                for (int i = 0; i < mPageCount; ++i) {
+                    paint.setColor((i == mCurrentPage) ? ACTIVE_DOT_COLOR : INACTIVE_DOT_COLOR);
+                    mIndicatorDrawable.draw(canvas);
+                    canvas.translate(dotInterval, 0);
+                }
+                break;
+
+            case TEXT:
+                final float textSize = canvas.getHeight() * 0.5f;
+                final float textSizeSmaller = textSize * 0.88f;
+
+                mBackgroundDrawable.setBounds(0, 0, canvas.getWidth(), canvas.getHeight());
+                mBackgroundDrawable.draw(canvas);
+
+                canvas.translate(canvas.getHeight() * 0.6f, canvas.getHeight() * 0.5f + textSize * 0.3f);
+
+                String pageText = "" + (mCurrentPage + 1);
+
+                // draw current page
+                paint = new Paint();
+                paint.setTextAlign(Paint.Align.LEFT);
+                paint.setTextSize(textSize);
+                paint.setColor(CURRENT_PAGE_COLOR);
+                canvas.drawText(pageText, 0, 0, paint);
+
+                // offset to next character
+                Rect rect = new Rect();
+                paint.getTextBounds(pageText, 0, pageText.length(), rect);
+                canvas.translate(rect.width(), 0);
+
+                // draw page count
+                paint.setTextSize(textSizeSmaller);
+                paint.setColor(PAGE_COUNT_COLOR);
+                canvas.drawText("  / " + mPageCount, 0, 0, paint);
+                break;
+        }
+    }
+
+    public void setCurrentPage(int page) {
+        mCurrentPage = page;
+        invalidate();
+    }
+
+    public void setPageCount(int count) {
+        mPageCount = count;
+        invalidate();
+    }
+
+    public void setType(Type type) {
+        mType = type;
+        invalidate();
+    }
+
+}

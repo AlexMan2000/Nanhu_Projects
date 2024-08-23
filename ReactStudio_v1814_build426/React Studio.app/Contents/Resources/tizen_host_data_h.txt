@@ -1,0 +1,33 @@
+/*
+ * This object is marshalled from a JSON passed from the host app.
+ * Struct fields are created only for properties that are used in Neonto views.
+ *
+ * So, this is essentially the view state for the smartwatch app.
+ * Individual screens are responsible for handling updates to the data.
+ *
+ */
+
+#ifndef _{{HEADER_GUARD_PREFIX}}_HOST_DATA_H_
+#define _{{HEADER_GUARD_PREFIX}}_HOST_DATA_H_
+
+#include <Elementary.h>
+
+
+
+typedef struct {{APP_PREFIX}}_host_data {
+
+	// Holds the decoded JSON structure.
+	// Rest of pointers in this structure are owned within this list.
+	Eina_List *rootList;
+
+    // TODO: add your data pointers here
+
+
+} {{APP_PREFIX}}_host_data_s;
+
+
+void
+parse_host_data(const char *jsonStr, {{APP_PREFIX}}_host_data_s *hostData);
+
+
+#endif /* _{{HEADER_GUARD_PREFIX}}_HOST_DATA_H_ */

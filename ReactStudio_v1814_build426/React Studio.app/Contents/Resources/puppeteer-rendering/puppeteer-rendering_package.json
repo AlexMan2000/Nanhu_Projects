@@ -1,0 +1,9 @@
+{
+  "name": "neonto-puppeteer-rendering",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "puppeteer": "^1.14.0",
+    "split": "^1.0.1"
+  }
+}

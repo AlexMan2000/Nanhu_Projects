@@ -1,0 +1,15 @@
+    private static HashMap<String, Typeface> mTypefaces = new HashMap<String, Typeface>();
+
+    public static Typeface getTypeface(String filename, Context context) {
+        Typeface typeface = mTypefaces.get(filename);
+        if (typeface == null) {
+            try {
+                typeface = Typeface.createFromAsset(context.getAssets(), "fonts/"+filename);
+                mTypefaces.put(filename, typeface);
+            }
+            catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        return typeface;
+    }

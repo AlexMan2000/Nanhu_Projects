@@ -1,0 +1,25 @@
+{
+  "short_name": "{{APPTITLE}}",
+  "name": "{{APPTITLE}}",
+  "icons": [
+    {
+      "src": "{{ICONFILENAME_192PX}}",
+      "sizes": "192x192",
+      "type": "{{ICONTYPE_192PX}}"
+    },
+    {
+      "src": "{{ICONFILENAME_128PX}}",
+      "sizes": "128x128",
+      "type": "{{ICONTYPE_128PX}}"
+    },
+    {
+      "src": "{{ICONFILENAME_512PX}}",
+      "sizes": "512x512",
+      "type": "{{ICONTYPE_512PX}}"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"{{OTHER_OPTIONS}}
+}

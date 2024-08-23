@@ -1,0 +1,79 @@
+#include "{{APP_PREFIX}}.h"
+#include "{{APP_PREFIX}}_host_data.h"
+#include "neonto_data_utils.h"
+#include <json-glib.h>
+
+
+void
+parse_host_data(const char *jsonStr, {{APP_PREFIX}}_host_data_s *hostData)
+{
+	if ( !jsonStr)
+		return;
+
+	dlog_print(DLOG_INFO, LOG_TAG, "Parsing JSON, len %d", strlen(jsonStr));
+
+	char text[512];
+	JsonParser *jsonParser = NULL;
+	GError *error = NULL;
+	jsonParser = json_parser_new();
+
+	if ( !json_parser_load_from_data(jsonParser,
+                            jsonStr,
+                            strlen(jsonStr),
+                            &error)) {
+		dlog_print(DLOG_ERROR, LOG_TAG, "** %s parse error: %s", __func__, error->message);
+		snprintf(text, 512, "Parse error: %s", error->message);
+		debug_display_alert(text);
+
+		g_error_free(error);
+		g_object_unref(jsonParser);
+		return;
+	}
+
+	JsonNode *root = json_parser_get_root(jsonParser);
+	if ( !root) {
+		dlog_print(DLOG_ERROR, LOG_TAG, "** %s content error: no root object in JSON", __func__);
+		debug_display_alert("Parse error: no root object in JSON");
+
+		g_object_unref(jsonParser);
+		return;
+	}
+
+	// destroy previous data.
+	// rootList owns everything (other pointers in the struct are owned by the list),
+	// so it's enough to free rootList and clear the struct.
+	if (hostData->rootList) free_list_from_json_entity(hostData->rootList);
+
+    memset(hostData, 0, sizeof({{APP_PREFIX}}_host_data_s));
+
+	//int level = 1;
+	Eina_List *jsonList = create_list_from_json_entity(root, EINA_FALSE);
+
+	dlog_print(DLOG_INFO, LOG_TAG, "%s: parsed %d items in list", __func__, eina_list_count(jsonList));
+
+	hostData->rootList = jsonList;
+
+
+	/*
+    Example of iterating keys and values:
+
+	Eina_List *l;
+	void *list_data;
+	int i = 0;
+	EINA_LIST_FOREACH(jsonList, l, list_data)
+	{
+		if (i % 2 == 0) {
+			char *key = (char *)list_data;
+			dlog_print(DLOG_INFO, LOG_TAG, "... %i: '%s'",i, key);
+        } else {
+            // value can be accessed with: eina_list_data_get(list_data)
+        }
+		i++;
+	}
+    */
+
+
+    // done with JSON data
+	g_object_unref(jsonParser), jsonParser = NULL;
+}
+

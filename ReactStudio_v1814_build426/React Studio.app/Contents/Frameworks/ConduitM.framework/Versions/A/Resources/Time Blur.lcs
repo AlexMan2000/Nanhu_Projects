@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>assets</key>
+	<array>
+		<data>
+		eJzdWm1v4jgQ/kx/RQ7145YkvBSKWFbdtujQtRQJutJ9OpnEpb41cc5xtqDV
+		/vdzXggJxBCbZPd0/QAp45lnbM+MnzEMPq1XWPsGqYeI87FuNoy6Bh2L2MhZ
+		fqy/zEdXvfqn4cXgt/vnu/mf0wfNxchj2vTl8+P4Tqtf6fqt62Ko6/fze236
+		OJ7NNW5D1x8mda3+xpjb1/X39/cGCEY1LLIKBnr6lBIXUrZ55MauuELDZnad
+		w0TWM+7wT21kseFFbfAVboaXgFpviI8Y6MG//FOPUe7scDL7A26gfZuI48+3
+		emTxN7SYl6gBSkHwkBi4dHyMU2q1LW4ttmBh4CX6aXEkvxtdvozvd/LaADkM
+		LiEdtpsDffscaupZy1O0fgLsbU4h7PcBxhNiQyUg05QAWvgI21+ipVaalSEB
+		ZkE+kk4JV1DBat1IYL0iDEeErgA7Z3YyS7nEZAHwzAIcGFiM0BQihQAPubHw
+		PV8dOa6vtCwycYV5Vjz7TBFJZq8dsIJKm9yRACHhVO7enoD39S+UghN5fGDB
+		9RfjIChfgaXmbk/CXQ72BBmwAQNKWNcirNRTWeXKLLbZ4yBqeWYTx+GFFdrq
+		wdWWwQuWcL5xYc6W76fDobJyaMp4SN4dSIMarrT4BTY6PqJGyAFYI/GyV3Bu
+		FSu60b6nAiFcBiXArhSgWiRstZFjw7Vc3diqqkZRsfq2RTkrjIrUizhi0Aos
+		YSXx0yqW2MEcOe9xXQgocCw4wmCphlfszM7FG2eISYFgiKycy2uKneAxVpRg
+		nNAIov6ktyHRmBKqlp2mzHYi7/PG5XED7RTUK8Ae1IUaE/LsFh2tXMmLHW4x
+		CH8VrPV+Lh/oEoqWyFGPjGJHTowVlgz1jZWJwgjLG2ECWNHNcnmirSBPFDX3
+		itXNCMqTJ+GRIgPLnG2+6XZ6htnuZqOmAtJ1gkxOZo29BraWamEzQAIk4eGY
+		wdJ3bfHxOUKRI0k7/uQzsMBwBjPkJD3iiOg5nGxGmvIt7cheITgBf+asMkd0
+		Vb4LQcpxfuxU7/sBRgUZ0zxBT8tMmesyUkap9p04BsqcZPvn1IXb4MPq8v7A
+		/H9qV/T/QTKYvywbmsWuXKZbutHvQ8dfjRlcqW2zNNxrwIq+AOynQzMkHUbD
+		ENCPlLryRWAxUptCWoG1kocr5CjpqdJ1s9iVQAqJ89M5GdEMmxOQ07RW0GyX
+		2miLkEIuLGgq9husfAsU/uMjCu3ficeCL1KUYls6YjyIH+JkyvHcFPHjuA6P
+		g0sGDR3Qgl9fkRXq3424/skRcaMsQ2ZZho70BnKGWmUZOsJK5Ax1yjJ05PiT
+		M9SVPUe3JIcwLbltzaRT/DgjPrWgZmHk5omjZDTFoqZY1BKL2mJRRyy6Fou6
+		J0tFwZYnKWMVtz25OGU10kd5c8WkWuRCTqE/KPH5J852/PeWYXzQ+MuPvDj4
+		3mx3PmjNbu9HWaEwh2vmUxhlSHS7nrdoqauhimPmqEOH61vNRf0JlsVPT/6W
+		38yU0fEUzoF7FN5/AyqM9dMjSsuGfKgK2p6fuT2ZtOzkZ2W33Qs4/6GgaRg9
+		o9c09qTnpCuFlSfgHkSyGDtjkSlGkm8nkimFkmA6u7Ztb7r723qKMu8eQtBv
+		2Z+wpL6kD/5SJrZ6Az38EdXw4l98f+8j
+		</data>
+	</array>
+	<key>packageID</key>
+	<string>fi.lacquer.conduit.scriptedplugin.motion.timeblur</string>
+	<key>pluginCategory</key>
+	<string>Motion</string>
+	<key>pluginName</key>
+	<string>Time Blur</string>
+	<key>scriptNodeClass</key>
+	<string>PixMathCapsuleNode</string>
+	<key>scriptNodeClassPackageID</key>
+	<string>fi.lacquer.conduit.supernode</string>
+	<key>scripts</key>
+	<dict>
+		<key>__constructor</key>
+		<string>this.cacheSurf1 = null;
+this.cacheSurf2 = null;
+this.blendingShader = null;
+this.frameIndex = 0;
+</string>
+		<key>__json_nodeParams</key>
+		<string>[
+  { "paramType": "float", "name": "Blur length", "min": 0, "max": 100, "default": 50 }
+]</string>
+		<key>describeNode</key>
+		<string>if (requestInfo == "nodeDescription")
+    return "Renders a time blur. For effect to be visible, input needs to have motion (i.e. video on playback).";
+
+else if (requestInfo == "nodeInputCount")
+    return 1;
+    
+return "";
+</string>
+		<key>onMouseClick</key>
+		<string></string>
+		<key>onMouseDrag</key>
+		<string></string>
+		<key>onMouseRelease</key>
+		<string></string>
+		<key>onParamAction</key>
+		<string></string>
+		<key>renderNodeIcon</key>
+		<string>	var ctx = canvas.getContext('2d'); 
+	var w = canvas.width;
+	var h = canvas.height;
+	
+	ctx.fillStyle = "rgba(255, 230, 30, 0.27)";
+	
+	ctx.translate(w*0.1, 0);
+	ctx.rotate(-15 * Math.PI / 180);
+	ctx.fillRect(w*0.1, h*0.08, w*0.45, h*0.5);
+	ctx.rotate(6 * Math.PI / 180);
+	ctx.fillRect(w*0.13, h*0.115, w*0.45, h*0.5);
+	ctx.rotate(7.1 * Math.PI / 180);
+	ctx.fillRect(w*0.16, h*0.142, w*0.45, h*0.5);
+	ctx.rotate(8.4 * Math.PI / 180);
+	ctx.fillRect(w*0.2, h*0.17, w*0.45, h*0.5);
+	ctx.rotate(10 * Math.PI / 180);
+	ctx.fillRect(w*0.25, h*0.18, w*0.45, h*0.5);
+</string>
+		<key>renderNodeOutput</key>
+		<string>// check if we have some input, and leave if we don't
+var inTex = inputTextures[0];
+
+if ( !inTex)
+	return;
+
+// Our param is in range 0-100. The blur is actually computed by blending the latest image
+// into the accumulation buffer using an opacity value in range 0-1.
+// High opacity values are rarely desired, so we'll treat the slider as a logarithmic scale
+// such that a slider value of "50" maps to an opacity of approximately 0.15.
+var accumulationOpacity = Math.max(0, 1 - Math.min(1.99999, Math.log(params[1])*Math.LOG10E) / 2);
+
+// Utility function.
+function isSameSize(a, b) {
+	if ( !a || !b || !a.width || !b.width)
+		return false;
+	return ((a.width == b.width) &amp;&amp; (a.height == b.height));
+}
+
+// GPU surfaces for storing the blur result.
+// To avoid ugly banding artifacts, the surfaces we use to store the
+// data need to store floating point pixels.
+// Luckily this is taken care of by Conduit:
+// all surfaces are floating point by default.
+if (this.cacheSurf1 === null || this.cacheSurf2 === null || !isSameSize(this.cacheSurf1, surface)) {
+	var w = surface.width;
+	var h = surface.height;
+	this.cacheSurf1 = new Surface(w, h);
+	this.cacheSurf2 = new Surface(w, h);
+}
+
+function accumulateInSurface(surf, inTex1, inTex2, opacity) {
+	surf.drawingContext.textureArray = [ inTex1, inTex2 ];
+
+	if (inTex1) inTex1.samplingMode = 'linear';
+	if (inTex2) inTex2.samplingMode = 'linear';
+
+	var shader = this.blendingShader
+				|| new Shader("!!ARBfp1.0"+
+						      "TEMP t1, t2;"+
+						      "TEX t1, fragment.texcoord[0], texture[0], RECT;"+
+							  "TEX t2, fragment.texcoord[1], texture[1], RECT;"+
+						      "MUL t2, t2, program.local[0].y;"+
+							  "MAD t1, t1, program.local[0].x, t2;"+
+						      "MOV result.color, t1;"+
+						      "END");
+	this.blendingShader = shader;
+	surf.drawingContext.shader = shader;
+	surf.drawingContext.setShaderParam(0, [opacity, 1.0-opacity, 0, 0]);
+
+	surf.drawWithinBounds();
+
+	surf.drawingContext.textureArray = [];
+	surf.drawingContext.shader = null;
+}
+
+var currentSurf;
+var prevSurf;
+if ((this.frameIndex % 2) == 0) {
+	currentSurf = this.cacheSurf1;
+	prevSurf = this.cacheSurf2;
+} else {
+	currentSurf = this.cacheSurf2;
+	prevSurf = this.cacheSurf1;
+}
+
+if (this.frameIndex == 0) {
+	currentSurf.drawingContext.textureArray = [ inTex ];
+	currentSurf.drawWithinBounds();
+} else {
+	accumulateInSurface(currentSurf, inTex, prevSurf.texture, accumulationOpacity);
+}
+
+surface.drawingContext.textureArray = [ currentSurf.texture ];
+surface.drawWithinBounds();
+
+this.frameIndex++;
+</string>
+		<key>renderOnScreenVideoControls</key>
+		<string></string>
+	</dict>
+</dict>
+</plist>

@@ -1,0 +1,120 @@
+﻿@charset "utf-8";
+/* CSS Document */
+body{
+	margin:0px; padding:0px; font-size:12px; font-family:"宋体";  color:#333;background:url(images/top1_bg.jpg) no-repeat top;
+}
+div,ul,li,p,table,tr,td,h2,h3,h4,h5,h6,img,form{
+	margin:0px; padding:0px; list-style:none; border:0;
+}
+input{ border:1px solid #ccc; color:#333; height:18px;}
+a,a:visited{
+	color:#333; text-decoration:none;outline:none;
+}
+a:hover{
+	color:#ff0000; text-decoration:none;outline:none;
+}
+#Heard{
+	width:968px; height:108px; margin:0px auto;background:url(images/top_bg.jpg) no-repeat; padding:10px 0px 10px 37px;
+}
+.Nav{
+	background:url(images/nav_bg.jpg) no-repeat; width:917px; height:47px;text-align:center;
+}
+#Main{
+	width:968px; height:auto !important; height:300px; min-height:300px; margin:0px auto;background:url(images/bg.jpg) repeat-y;  padding:10px 0px 10px 37px;
+}
+#Index_link{
+	width:917px; height:155px; background:url(images/link_bg.jpg) no-repeat; padding-bottom:20px;
+}
+#Bottom{
+	width:965px; height:40px; margin:0px auto;background:url(images/bottom.jpg) no-repeat; padding-right:40px; text-align:right; padding-top:25px; font-family:"黑体", "宋体"; font-size:12px;
+}
+#Main_left{
+	width:227px;height:auto !important; height:300px; min-height:300px; float:left; background:url(images/leftbg.jpg) no-repeat right top;
+}
+#Main_right{
+	width:666px;height:auto !important; height:300px; min-height:300px; float:left; margin-left:20px; display:inline;
+}
+.left_list{
+	width:188px; border:1px solid #e0e0e0; border-top:none; padding:10px 7px 15px;
+}
+.left_list li{
+	width:188px; height:26px; line-height:26px; border-bottom:1px solid #e0e0e0; vertical-align:middle; font-weight:bold; background:url(images/menubg1.jpg) no-repeat;
+}
+.left_list li a{
+	width:141px; height:26px; line-height:26px; padding-left:47px;
+}
+.left_list li a:hover{
+	width:141px; height:26px; line-height:26px; vertical-align:middle; background:url(images/menubg.jpg) no-repeat;display:block; color:#fff; padding-left:47px;
+}
+#left_list1 a{
+	width:141px; height:26px; line-height:26px; vertical-align:middle; background:url(images/menubg.jpg) no-repeat;display:block; color:#fff; padding-left:47px;
+}
+.left_link{
+	width:188px; padding:5px 8px;
+}
+.left_link li{
+	width:188px; height:26px; line-height:26px; vertical-align:middle;
+}
+.Title{
+	font-family:"微软雅黑", "宋体"; font-size:14px; margin-top:10px;
+}
+.Contnet{
+	width:636px; line-height:24px; padding:15px 15px 30px;
+}
+.Link_list{
+	width:880px; padding:25px;height:auto !important; height:360px; min-height:360px;
+}
+.Link_list li{
+	width:188px; height:30px; line-height:30px; vertical-align:middle; float:left; margin-right:28px; display:inline;
+}
+.Btn{
+	width:58px; height:25px; background:url(images/btn.jpg) no-repeat; border:0; line-height:25px; text-align:center; color:#fff; font-weight:bold;
+}
+.Fenbu_list{
+	width:634px; padding:20px 0; margin-left:30px;
+}
+.Fenbu_list li{
+	width:283px; height:241px; line-height:30px; font-weight:bold; text-align:center; float:left; margin-right:25px; display:inline; margin-bottom:10px; vertical-align:middle;
+}
+.case_list{
+	width:640px;margin:0px auto; margin-top:20px;
+}
+.case_list li{
+	width:160px; height:150px; line-height:20px;font-weight:bold; text-align:center; float:left; vertical-align:middle;
+}
+.case_list1{
+	widht:144px; height:107px; padding:8px; background:url(images/case_bg.jpg) no-repeat;
+}
+.Fenqu{
+	width:666px; margin-top:5px;
+}
+.Fenqu li{
+	 float:right; margin-left:10px; vertical-align:middle;
+}
+.Fenqu li a{
+	border:1px solid #ccc;padding:3px 4px;display:block;
+}
+.Fenqu li a:hover{
+	color:#fff; background:#ff0000; display:block;padding:3px 4px;border:1px solid #ccc;
+}
+#Fenqu1 a{
+	color:#fff; background:#ff0000; display:block;padding:3px 4px;border:1px solid #ccc;
+}
+.yema{
+	border-top:2px solid #666; margin-top:20px; height:30px; text-align:right; padding:15px 0;
+}
+.yema1{
+	padding:3px 4px;background:#f7f7f7; border:1px solid #e0e0e0; line-height:20px; text-align:center; margin-left:10px;
+}
+h4{
+	padding-top:15px; line-height:30px; font-size:14px; font-weight:bold; color:#ff0000;
+}
+
+#Next{float:left; margin-top:116px;display:inline; margin-left:10px;width:55px; height:34px;background:url(images/next01.jpg) no-repeat right;}
+#Next a{width:55px; height:34px; background:url(images/next01.jpg) no-repeat right;}
+#Next a:hover{width:55px; height:34px; background:url(images/next0.jpg) no-repeat right; display:block;}
+
+#Prev{float:left; margin-top:116px; display:inline; margin-right:10px; height:34px; width:89px;}
+#Prev a{ height:34px; width:71px; padding-left:18px;background:url(images/prev01.jpg) no-repeat left; display:block;}
+#Prev a:hover{ height:34px; width:71px; padding-left:18px;background:url(images/prev0.jpg) no-repeat left; display:block;}
+#Heard a:hover{ color:#ff0000;}

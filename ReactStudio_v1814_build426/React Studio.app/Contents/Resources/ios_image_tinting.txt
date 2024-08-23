@@ -1,0 +1,16 @@
+UIImage *image = [UIImage imageNamed:name];
+
+CGRect bounds = CGRectMake(0, 0, ceil(image.size.width), ceil(image.size.height));
+
+UIGraphicsBeginImageContextWithOptions(bounds.size, NO, 0.0f);  // 0.0f means the scale factor of the device's main screen.
+CGContextRef context = UIGraphicsGetCurrentContext();
+
+CGContextSetFillColorWithColor(context, tintColor.CGColor);
+CGContextFillRect(context, bounds);
+
+[image drawInRect:bounds blendMode:kCGBlendModeDestinationIn alpha:1.0];
+
+UIImage *tintedImage = UIGraphicsGetImageFromCurrentImageContext();
+UIGraphicsEndImageContext();
+
+return [tintedImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];  // request to keep the original color always.

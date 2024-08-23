@@ -1,0 +1,22 @@
+
+// A wrapper for using this view controller as a cell in a UITableView
+
+@implementation {{CLASSNAME_CELL}}
+
+- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(nullable NSString *)reuseIdentifier
+{
+    {{CLASSNAME_CONTAINED}} *vc = [[{{CLASSNAME_CONTAINED}} alloc] initWithNibName:nil bundle:nil];
+    UIView *contentView = vc.view;
+
+    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
+
+    [self.contentView addSubview:contentView];
+
+    self.clipsToBounds = YES;
+    self.backgroundColor = [UIColor clearColor];
+    self.containedViewController = vc;
+
+    return self;
+}
+
+@end

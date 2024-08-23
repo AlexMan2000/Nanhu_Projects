@@ -1,0 +1,12 @@
+    id val;
+
+    const BOOL isPad = [[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad;
+    const BOOL isPortrait = UIInterfaceOrientationIsPortrait([[UIApplication sharedApplication] statusBarOrientation]);
+    NSInteger format = 0;
+    if (isPad) {
+        format = (isPortrait) ? 16 : 15;
+    } else {
+        double screenDim = MAX([UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height);
+        format = (screenDim <= 480.0) ? 3 : (screenDim <= 568.0 ? 5 : (screenDim <= 667.0 ? 17 : (screenDim <= 736.0 ? 19 : (screenDim <= 812.0 ? 23 : 25))));
+        if (isPortrait) format++;
+    }

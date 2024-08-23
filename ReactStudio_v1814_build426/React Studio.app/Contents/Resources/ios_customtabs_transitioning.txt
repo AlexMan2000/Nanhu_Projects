@@ -1,0 +1,60 @@
+
+#pragma mark --- custom transitions for presenting view controllers ---
+
+- (id<UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented
+                                                                  presentingController:(UIViewController *)presenting
+                                                                      sourceController:(UIViewController *)source {
+    self.transitioningIn = YES;
+    return (id)self;
+}
+
+- (id<UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed
+{
+    self.transitioningIn = NO;
+    return (id)self;
+}
+
+- (NSTimeInterval)transitionDuration:(id<UIViewControllerContextTransitioning>)transition
+{
+    return 0.18;
+}
+
+- (void)animateTransition:(id<UIViewControllerContextTransitioning>)transition
+{
+    UIViewController *from = [transition viewControllerForKey:UITransitionContextFromViewControllerKey];
+    UIViewController *to = [transition viewControllerForKey:UITransitionContextToViewControllerKey];
+    
+    CGRect toFrame = self.tabContainer.frame;
+    
+    if (self.transitioningIn) {
+        //from.view.userInteractionEnabled = NO;
+        
+        [transition.containerView addSubview:from.view];
+        [transition.containerView addSubview:to.view];
+        
+        to.view.alpha = 0.0;
+        to.view.frame = toFrame;
+        
+        [UIView animateWithDuration:[self transitionDuration:transition]
+                         animations:^{
+                             //from.view.tintAdjustmentMode = UIViewTintAdjustmentModeDimmed;
+                             to.view.alpha = 1.0;
+                         } completion:^(BOOL finished) {
+                             [transition completeTransition:YES];
+                         }];
+    }
+    else {
+        //to.view.userInteractionEnabled = YES;
+        
+        [transition.containerView addSubview:to.view];
+        [transition.containerView addSubview:from.view];
+        
+        [UIView animateWithDuration:[self transitionDuration:transition]
+                         animations:^{
+                             //to.view.tintAdjustmentMode = UIViewTintAdjustmentModeAutomatic;
+                             to.view.alpha = 0.0;
+                         } completion:^(BOOL finished) {
+                             [transition completeTransition:YES];
+                         }];
+    }
+}

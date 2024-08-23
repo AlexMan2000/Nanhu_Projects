@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>{{APPDEFAULTLANGUAGE}}</string>
+	<key>CFBundleDisplayName</key>
+	<string>${PRODUCT_NAME}</string>
+	<key>CFBundleExecutable</key>
+	<string>${EXECUTABLE_NAME}</string>
+	<key>CFBundleIdentifier</key>
+    <string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>${PRODUCT_NAME}</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleShortVersionString</key>
+    <string>{{BUNDLEVERSION}}</string>
+	<key>CFBundleSignature</key>
+	<string>????</string>
+	<key>CFBundleVersion</key>
+	<string>{{BUNDLEVERSION}}</string>
+{{COPYRIGHT_KEY}}<key>LSRequiresIPhoneOS</key>
+	<true/>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>{{BUNDLEID}}</string>
+			</array>
+		</dict>
+	</array>
+	<key>UIRequiredDeviceCapabilities</key>
+	<array>
+		<string>armv7</string>
+	</array>
+    <key>UIRequiresFullScreen</key>
+    <true/>
+	<key>UISupportedInterfaceOrientations</key>
+	<array>
+{{SUPPORTEDINTERFACEORIENTATIONS}}
+	</array>
+	<key>UIAppFonts</key>
+	<array>
+	</array>
+    <key>UILaunchStoryboardName</key>
+    <string>LaunchScreen</string>
+{{ADDITIONAL_PROPERTIES}}
+    <key>NSAppTransportSecurity</key>
+    <dict>
+        <key>NSAllowsArbitraryLoads</key><true/>
+    </dict>
+</dict>
+</plist>

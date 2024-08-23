@@ -1,0 +1,4 @@
+{{TARGETCLASS}} *viewCtrl = [[{{TARGETCLASS}} alloc] init];
+viewCtrl.modalTransitionStyle = {{MODALTRANSITIONSTYLE}};
+{{GOTO_PAGE}}
+[{{MASTER_VIEW_CONTROLLER}} presentViewController:viewCtrl animated:{{ANIMATED}} completion:NULL];

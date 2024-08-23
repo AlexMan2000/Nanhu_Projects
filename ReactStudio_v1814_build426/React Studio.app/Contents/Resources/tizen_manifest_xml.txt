@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<manifest xmlns="http://tizen.org/ns/packages" api-version="2.3.1" package="{{PACKAGE_ID}}" version="{{APP_VERSION}}">
+    <profile name="wearable"/>
+    <ui-application appid="{{PACKAGE_ID}}" exec="{{PROJECT_NAME_LOWERCASE}}" multiple="false" nodisplay="false" taskmanage="true" type="capp">
+        <label>{{APP_DISPLAY_NAME}}</label>
+        <icon>{{PROJECT_NAME_LOWERCASE}}.png</icon>
+{{COMPANION_APP_KEYS}}
+        <metadata key="launch-on-attach" value="false"/>
+    </ui-application>
+    <privileges>
+    	<privilege>http://tizen.org/privilege/mediastorage</privilege>
+        <privilege>http://tizen.org/privilege/haptic</privilege>
+        <privilege>http://developer.samsung.com/tizen/privilege/accessoryprotocol</privilege>
+    </privileges>
+    <feature name="http://tizen.org/feature/screen.shape.circle">true</feature>
+</manifest>

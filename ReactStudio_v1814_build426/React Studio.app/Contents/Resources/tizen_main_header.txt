@@ -1,0 +1,120 @@
+#ifndef __{{HEADER_GUARD_PREFIX}}_H__
+#define __{{HEADER_GUARD_PREFIX}}_H__
+
+#include <app.h>
+#include <dlog.h>
+#include <Elementary.h>
+#include <efl_extension.h>
+#include <system_settings.h>
+#include <json-glib.h>
+
+#include "neonto_page_indicator.h"
+#include "neonto_data_utils.h"
+#include "{{APP_PREFIX}}_host_data.h"
+
+#ifdef  LOG_TAG
+#undef  LOG_TAG
+#endif
+#define LOG_TAG "{{APP_PREFIX}}"
+
+#if !defined(PACKAGE)
+#define PACKAGE "{{APP_PACKAGE_ID}}"
+#endif
+
+#define IMAGES_DIR "/opt/usr/apps/"PACKAGE"/res/images"
+#define FONTS_DIR "/opt/usr/apps/"PACKAGE"/res/fonts"
+#define RES_DIR  "/opt/usr/apps/"PACKAGE"/res"
+#define SHARED_DIR  "/opt/usr/apps/"PACKAGE"/shared/data"
+#define USER_DOCUMENTS_DIR "/opt/usr/media"
+
+
+// --- App-wide colors and styles ---
+
+#define APP_PRIMARY_COLOR_R         {{PRIMARY_COLOR_R}}
+#define APP_PRIMARY_COLOR_G         {{PRIMARY_COLOR_G}}
+#define APP_PRIMARY_COLOR_B         {{PRIMARY_COLOR_B}}
+
+#define APP_BASE_FONT               "{{APP_BASE_FONT}}"
+#define APP_BASE_FONT_STYLE         "{{APP_BASE_FONT_STYLE}}"
+#define APP_BASE_FONT_SIZE          {{APP_BASE_FONT_SIZE}}
+#define APP_HEADLINE_FONT           "{{APP_HEADLINE_FONT}}"
+#define APP_HEADLINE_FONT_STYLE     "{{APP_HEADLINE_FONT_STYLE}}"
+#define APP_HEADLINE_FONT_SIZE      {{APP_HEADLINE_FONT_SIZE}}
+#define APP_ACTION_FONT             "{{APP_ACTION_FONT}}"
+#define APP_ACTION_FONT_STYLE       "{{APP_ACTION_FONT_STYLE}}"
+#define APP_ACTION_FONT_SIZE        {{APP_ACTION_FONT_SIZE}}
+
+
+
+// --- App's global data ---
+
+#define MAINSCREEN_MAX_PAGES        20
+
+typedef struct appdata {
+    char appTag[32];  // set when object created, can be used to verify this struct is valid
+
+    // basic components of UI
+    Evas_Object *win;
+    Evas_Object *conform;
+    Evas_Object *layout;
+    Evas_Object *nf;
+    Eext_Circle_Surface *circleSurface;
+    Eina_Bool viewInited;
+
+    // Samsung Accessory protocol status
+    Eina_Bool hasSAPPeerConnection;
+    double lastSAPDisconnectTime;
+    double lastSAPReconnectAttemptTime;
+
+    // companion app data (received over SAP)
+    char *hostDataJSON;
+    {{APP_PREFIX}}_host_data_s hostData;
+
+
+    // main screen multi-page UI components
+	Evas_Object *mainScreenScroller;
+    Evas_Object *mainScreenCircleScroller;
+	Evas_Object *mainScreenProgressbar;
+	Evas_Object *mainScreenPageIndicator;
+	Evas_Object *mainScreenPages[MAINSCREEN_MAX_PAGES];
+
+
+{{UI_ELEMENT_STRUCT_MEMBER_DECLS}}
+
+} appdata_s;
+
+
+// --- UI functions ---
+
+void
+{{APP_PREFIX}}_main_screen_create_base_gui(appdata_s *ad);
+
+void
+{{APP_PREFIX}}_main_screen_rebuild_pages(appdata_s *ad);
+
+void
+{{APP_PREFIX}}_main_screen_go_to_page(appdata_s *ad, int index);
+
+Eina_Bool
+{{APP_PREFIX}}_main_screen_update_views_from_host_data(appdata_s *ad);
+
+
+{{UI_FUNCTION_DECLS}}
+
+
+
+// --- Samsung Accessory (SAP) functions, used by companion apps ---
+
+// function wrappers for SAP functionality
+void initialize_sap(void *user_data);
+gboolean find_sap_peers(void *user_data);
+gboolean sap_send_data(const char *message);
+gboolean sap_has_connection();
+
+// callbacks from SAP
+void sap_received_data(char *data, unsigned int dataLen, void *user_data);
+void debug_display_alert(char *str);
+void sap_did_connect(void *user_data);
+void sap_did_disconnect(void *user_data);
+
+#endif /* __{{HEADER_GUARD_PREFIX}}_H__ */

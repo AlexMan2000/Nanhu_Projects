@@ -1,0 +1,14 @@
+//
+//  InterfaceController.h
+//  WatchKit Extension
+//
+
+#import <WatchKit/WatchKit.h>
+#import <Foundation/Foundation.h>
+
+@interface InterfaceController : WKInterfaceController
+{{PUBLICPROPS}}
+
+{{ACTIONDECLS}}
+
+@end

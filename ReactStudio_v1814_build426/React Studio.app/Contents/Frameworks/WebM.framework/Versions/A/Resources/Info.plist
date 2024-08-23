@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>English</string>
+	<key>CFBundleExecutable</key>
+	<string>WebM</string>
+	<key>CFBundleGetInfoString</key>
+	<string>WebM framework. Contains libvpx and libwebm. Version 0.9.5 (2011.02.13)</string>
+	<key>CFBundleIdentifier</key>
+	<string>fi.lacquer.WebMFramework</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>WebM</string>
+	<key>CFBundlePackageType</key>
+	<string>FMWK</string>
+	<key>CFBundleShortVersionString</key>
+	<string>WebM framework, 0.9.5</string>
+	<key>CFBundleSignature</key>
+	<string>????</string>
+	<key>CFBundleVersion</key>
+	<string>2</string>
+  <key>CFBundleSupportedPlatforms</key>
+  <array>
+    <string>MacOSX</string>
+  </array>
+	<key>NSHumanReadableCopyright</key>
+	<string>libvpx and libwebm © 2010-11 The WebM project authors. Licensed under a BSD-style license. This Mac OS X framework was built by Pauli Ojala of Lacquer oy/ltd.</string>
+</dict>
+</plist>

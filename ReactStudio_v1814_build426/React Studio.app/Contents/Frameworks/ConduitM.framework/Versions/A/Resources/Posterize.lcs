@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>assets</key>
+	<array/>
+	<key>packageID</key>
+	<string>fi.lacquer.conduit.scriptedplugin.stylize.posterize</string>
+	<key>pluginCategory</key>
+	<string>Stylize</string>
+	<key>pluginName</key>
+	<string>Posterize</string>
+	<key>scriptNodeClass</key>
+	<string>PixMathCapsuleNode</string>
+	<key>scriptNodeClassPackageID</key>
+	<string>fi.lacquer.conduit.supernode</string>
+	<key>scripts</key>
+	<dict>
+		<key>__constructor</key>
+		<string>this.renderShader = null;
+</string>
+		<key>__json_nodeParams</key>
+		<string>[
+  { "paramType": "float", "name": "Color levels", "min": 1, "max": 64, "default": 16 }
+]</string>
+		<key>describeNode</key>
+		<string>if (requestInfo == "nodeDescription") {
+	return "Renders a posterization filter effect.";
+}
+else if (requestInfo == "nodeInputCount") {
+    return 1;
+}
+return "";
+
+</string>
+		<key>onMouseClick</key>
+		<string></string>
+		<key>onMouseDrag</key>
+		<string></string>
+		<key>onMouseRelease</key>
+		<string></string>
+		<key>onParamAction</key>
+		<string></string>
+		<key>renderNodeIcon</key>
+		<string>	/*
+	This function renders the icon that's shown in the Conduit Editor's node box
+	when this effect is packaged as a plugin.
+	This icon is not very exciting, it's just some horizontal colored boxes on top of each other.
+	*/
+	var ctx = canvas.getContext('2d'); 
+	var w = canvas.width;
+	var h = canvas.height;
+	ctx.save();
+	
+	var x = w*0.1;
+	var y = h*0.075;
+	w *= 0.8;
+	h *= 0.85;
+	
+	var levels = 5;
+	for (var i = 0; i &lt; levels; i++) {
+		var rowH = (h/levels);
+		var y = i*rowH;
+		
+		var r = (i &gt; 0) ? (i &gt; 3 ? 1.0 : 0.5) : 0.0;
+		var g = (i &gt; 2) ? 0.7 : 0.0;
+		var b = (i &gt; 1) ? 1.0 : 0.0;
+		var a = 0.8;
+		ctx.beginPath();
+		var color = "rgba("+Math.floor(r*255)+", "+Math.floor(g*255)+", "+Math.floor(b*255)+", "+a+")";
+		ctx.fillStyle = color;
+		ctx.fillRect(x, y, w, rowH);
+	}
+	ctx.restore();
+</string>
+		<key>renderNodeOutput</key>
+		<string>// this function is where the rendering happens.
+// 'surface' is the GPU surface that we need to fill with our final output.
+// 'inputTextures' are the input images to which we'll apply the image.
+// (we only have one input, so we use inputTextures[0] to access it.)
+var w = surface.width;
+var h = surface.height;
+
+// this is the value of the "Color levels" parameter in our UI
+var posterLevels = params[1];
+
+// the param value can be any number, so ensure that it's within a sensible range and is an integer
+posterLevels = Math.max(1, Math.min(128, Math.round(posterLevels)));
+
+// this is the shader that does the actual rendering. if we have a shader already cached in "this.renderShader",
+// use that; otherwise we create the shader here.
+//
+// a shader is a pixel-processing program that runs directly on the GPU hardware.
+// because of cross-platform compatibility concerns, Conduit uses the "ARB fragment program"
+// shading language by default. it's a form of assembler. it looks a bit scary,
+// but the actual operation of this program is pretty simple. each line is a basic command.
+// see the comments on each line for detailed explanation of the shader program.
+var shader = this.renderShader
+					|| new Shader("!!ARBfp1.0"+
+							      "TEMP t1;"+   // create a temp variable named 't1'
+							      "TEX t1, fragment.texcoord[0], texture[0], RECT;"+  // sample the current pixel from the input texture
+								  "ADD t1, t1, program.local[0].z;"+  // add a constant value to the pixel ("program.local" refers to the values we pass in setShaderParam below)
+								  "MUL t1, t1, program.local[0].x;"+  // multiply by a constant value which is the number of levels we want
+								  "FLR t1, t1;"+                      // apply a "floor" function (i.e. cut off the decimals from the pixel values)
+								  "MUL t1, t1, program.local[0].y;"+  // multiply by another constant that brings the pixels back to the usual 0-1 range
+							      "MOV result.color, t1;"+            // copy the pixel value to the output variable, which is always called "result.color"
+							      "END");
+
+this.renderShader = shader;  // keep the shader around so it's not recreated every frame
+
+surface.drawingContext.shader = shader;  // apply the shader in the output surface we were given
+
+// set constant values for the shader's operation. these constants are referred as "program.local"
+// in the shader program above.
+//
+// as an optimization, we pass both the "poster levels" param value and its inverse to the shader here.
+// (the inverse is used to bring the pixel value back to 0-1 range after a floor() function was applied.)
+// the third value passed here is a constant that's added to the pixel values. it rounds up the posterization so we get more white.
+surface.drawingContext.setShaderParam(0, [posterLevels, 1/posterLevels, (1/posterLevels)*0.5, 0]);
+
+// set the texture that we use as the drawing source
+inputTextures[0].samplingMode = 'linear';
+surface.drawingContext.textureArray = [ inputTextures[0] ];
+
+// this draws into the surface with the texture and shader we specified. done!
+surface.drawWithinBounds();
+
+</string>
+		<key>renderOnScreenVideoControls</key>
+		<string></string>
+	</dict>
+</dict>
+</plist>

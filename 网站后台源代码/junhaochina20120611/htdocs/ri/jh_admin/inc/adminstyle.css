@@ -1,0 +1,30 @@
+A:visited{TEXT-DECORATION: none;color: #666666;}
+A:active{TEXT-DECORATION: none;color: #666666;}
+A:link{text-decoration: none;color: #666666;}
+A:hover {BORDER-BOTTOM: 1px dotted; BORDER-LEFT-WIDTH: 1px; BORDER-RIGHT-WIDTH: 1px; BORDER-TOP-WIDTH: 1px; COLOR: #ff6600; TEXT-DECORATION: none}
+
+DIV,FORM,P,TD,BODY{FONT-SIZE:9pt;}
+BODY{
+COLOR: #666666;
+background-image: url(../images/bg.gif);
+background-position:center;
+scrollbar-face-color: #DEE3E7;
+scrollbar-highlight-color: #FFFFFF;
+scrollbar-shadow-color: #DEE3E7;
+scrollbar-3dlight-color: #D1D7DC;
+scrollbar-arrow-color:  #006699;
+scrollbar-track-color: #EFEFEF;
+scrollbar-darkshadow-color: #98AAB1;
+}
+#TableTitleLink A:link,#TableTitleLink A:visited{COLOR:666666;}
+.a1{BACKGROUND-IMAGE:url('../images/title.gif');COLOR:666666;}
+.a2{BACKGROUND-COLOR: C6C3C6;}
+.a3{BACKGROUND-COLOR: FFFFFF;}
+.a4{BACKGROUND-COLOR: EFEFEF;}
+select {background-color: #ffffff; color: #666666; font-size: 12px; border: solid 1px #666666}
+input,textarea {background-color: #ffffff; color: #666666; font-family: tahoma; font-size: 12px; border:solid 1px #666666; }
+option {font-size: 12px; background-color: #f3f3f3; color: #51485f;}
+.ai:visited{TEXT-DECORATION: none;color:#FF0000; font-weight:bold}
+.ai:active{TEXT-DECORATION: none;color:#FF0000; font-weight:bold}
+.ai:link{TEXT-DECORATION: none;color:#FF0000; font-weight:bold}
+.ai:hover {TEXT-DECORATION: none;color:#FF0000; font-weight:bold}

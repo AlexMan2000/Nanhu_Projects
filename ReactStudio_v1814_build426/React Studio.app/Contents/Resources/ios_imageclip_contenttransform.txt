@@ -1,0 +1,35 @@
+- (void)setImageName:(NSString *)name
+{
+    _imageName = name;
+
+    [self setNeedsDisplay];
+}
+
+- (void)setOverrideImage:(UIImage *)overrideImage
+{
+    if (_overrideImage && ![_overrideImage isKindOfClass:[UIImage class]]) {
+        NSLog(@"** %s: invalid value: %@", __func__, overrideImage);
+        return;
+    }
+{{SETOVERRIDEIMAGE}}
+}
+
+- (void)setContentTransformMatricesString:(NSString *)s
+{
+    if (s) {
+        // The given string is a list of matrices for transforms applied to this element.
+        // We just need the final one, so look for the last semicolon separator.
+        NSString *t1 = s;
+        NSString *t2 = nil;
+        NSRange range = [s rangeOfString:@";" options:NSBackwardsSearch];
+        if (range.location != NSNotFound) {
+            t1 = [s substringToIndex:range.location];
+            t2 = [[s substringFromIndex:range.location+1] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+        }
+        _contentTransform = CGAffineTransformFromString(t2 ? t2 : t1);
+        _contentTransform = CGAffineTransformScale(_contentTransform, 1.0/_contentOriginalScale, 1.0/_contentOriginalScale);
+    }
+
+{{UPDATECONTENTTRANSFORM}}
+}
+

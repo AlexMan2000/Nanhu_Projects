@@ -1,0 +1,76 @@
+div.AppView{
+    width:900px;
+    height:680px;
+    left:40px;
+    top:360px;
+    background-color: white;
+    display: inline-block;
+    border-bottom: none;
+    text-align: left;
+    line-height: 1em;
+    background: #fff;
+    color: #333;
+    position: absolute;
+    overflow: hidden;
+    border-radius: 2px;
+    box-shadow: 0 0 2px 0 rgb(0 0 0 / 10%), 0 2px 2px 0 rgb(0 0 0 / 25%);
+    z-index: 1;
+}
+
+div.AppView1{
+    width:900px;
+    height:680px;
+    left:1030px;
+    top:360px;
+    background-color: white;
+    display: inline-block;
+    border-bottom: none;
+    text-align: left;
+    line-height: 1em;
+    background: #fff;
+    color: #333;
+    position: absolute;
+    overflow: hidden;
+    border-radius: 2px;
+    box-shadow: 0 0 2px 0 rgb(0 0 0 / 10%), 0 2px 2px 0 rgb(0 0 0 / 25%);
+    z-index: 1;
+}
+
+h1 {
+    left:40px;
+    top:20px;
+    position: absolute;
+    font-family: Playfair Display,Georgia,Times New Roman,serif;
+    color: #555;
+    
+}
+
+h4 {
+    left:40px;
+    top:45px;
+    position: absolute;
+    font-family: Playfair Display,Georgia,Times New Roman,serif;
+    font-weight: 500;
+    color: #555;
+    
+}
+
+h5 {
+    left:40px;
+    top:-15px;
+    position: absolute;
+    font-family: Papyrus,fantasy;
+    font-weight: 1000;
+    color: #555;
+}
+
+h6 {
+    left:40px;
+    top:95px;
+    right:500px;
+    position: absolute;
+    font-family: Papyrus,fantasy;
+    font-weight: 1000;
+    color: #555;
+}
+

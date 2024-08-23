@@ -1,0 +1,429 @@
+{
+  "meta": {
+    "author": "Neonto Ltd",
+    "updatedAt": "2015-08-15"
+  },
+  "iconGroups": [
+    {
+      "generic": [
+
+
+        {
+          "names": ["add"],
+          "icons": ["fa-add1.svg", "fa-add2.svg", "fa-add3.svg", "fa-add4.svg","ic_add_black_48px.svg", "ic_add_box_black_48px.svg", "ic_add_circle_black_48px.svg", "ic_add_circle_outline_black_48px.svg"]
+        },
+        {
+          "names": ["alarm"],
+          "icons": ["ic_alarm_black_48px.svg", "ic_alarm_add_black_48px.svg", "ic_alarm_off_black_48px.svg", "ic_alarm_on_black_48px.svg"]
+        },
+        {
+          "names": ["album"],
+          "icons": ["ic_album_black_48px.svg", "ic_photo_album_black_48px.svg"]
+        },
+        {
+          "names": ["angle", "chevron", "expand"],
+          "icons": ["fa-chevron1.svg", "fa-chevron2.svg", "fa-chevron3.svg", "fa-chevron4.svg", "fa-chevron5.svg", "fa-chevron6.svg", "fa-chevron7.svg", "fa-chevron8.svg", "fa-chevron9.svg", "fa-chevron10.svg", "fa-chevron11.svg", "fa-chevron12.svg", "fa-chevron13.svg", "fa-chevron14.svg", "fa-chevron15.svg", "fa-chevron16.svg", "ic_chevron_left_black_48px.svg", "ic_chevron_right_black_48px.svg", "ic_expand_less_black_48px.svg", "ic_expand_more_black_48px.svg" ]
+        },
+        {
+          "names": ["apps"],
+          "icons": ["ic_apps_black_48px.svg"]
+        },
+        {
+          "names": ["arrow", "forward", "back"],
+          "icons": ["fa-arrow1.svg", "fa-arrow2.svg", "fa-arrow3.svg", "fa-arrow4.svg", "fa-arrow5.svg", "fa-arrow6.svg", "fa-arrow7.svg", "fa-arrow8.svg", "fa-arrow9.svg", "fa-arrow10.svg", "fa-arrow11.svg", "fa-arrow12.svg", "fa-arrow13.svg", "fa-arrow14.svg", "fa-arrow15.svg", "fa-arrow16.svg", "fa-arrow17.svg", "fa-arrow18.svg", "fa-arrow19.svg", "fa-arrow20.svg", "ic_arrow_back_black_48px.svg", "ic_arrow_forward_black_48px.svg" ]
+        },
+        {
+          "names": ["bank", "institution", "account balance"],
+          "icons": ["fa-bank.svg", "ic_account_balance_black_48px.svg"]
+        },
+        {
+          "names": ["bars", "navicon", "menu"],
+          "icons": ["fa-menu.svg", "ic_menu_black_48px.svg"]
+        },
+        {
+          "names": ["bell", "notification", "alert"],
+          "icons": ["fa-bell1.svg", "fa-bell2.svg", "fa-bell3.svg", "fa-bell4.svg", "ic_notifications_active_black_48px.svg", "ic_notifications_black_48px.svg", "ic_notifications_none_black_48px.svg", "ic_notifications_off_black_48px.svg", "ic_notifications_paused_black_48px.svg", "ic_add_alert_black_48px.svg"]
+        },
+        {
+          "names": ["bolt", "flash"],
+          "icons": ["fa-bolt.svg", "ic_flash_on_black_48px.svg", "ic_flash_off_black_48px.svg", "ic_flash_auto_black_48px.svg"]
+        },
+        {
+          "names": ["book"],
+          "icons": ["fa-book.svg"]
+        },
+        {
+          "names": ["bookmark", "turned in/not"],
+          "icons": ["fa-bookmark1.svg", "fa-bookmark2.svg", "ic_bookmark_black_48px.svg", "ic_bookmark_border_black_48px.svg", "ic_book_black_48px.svg"]
+        },
+        {
+          "names": ["calendar", "contact calendar", "event"],
+          "icons": ["fa-calendar1.svg", "fa-calendar2.svg", "fa-calendar3.svg", "fa-calendar4.svg", "fa-calendar5.svg", "fa-calendar6.svg", "ic_perm_contact_calendar_black_48px.svg", "ic_event_black_48px.svg"]
+        },
+        {
+          "names": ["camera", "camera front", "rear camera", "switch camera", "camera roll", "camera enhance"],
+          "icons": ["fa-camera1.svg", "fa-camera2.svg", "ic_camera_alt_black_48px.svg", "ic_camera_black_48px.svg", "ic_camera_front_black_48px.svg", "ic_camera_rear_black_48px.svg", "ic_switch_camera_black_48px.svg", "ic_camera_roll_black_48px.svg", "ic_camera_enhance_black_48px.svg"]
+        },
+        {
+          "names": ["caret", "arrow"],
+          "icons": ["fa-caret1.svg", "fa-caret2.svg", "fa-caret3.svg", "fa-caret4.svg", "ic_arrow_drop_down_black_48px.svg", "ic_arrow_drop_up_black_48px.svg", "ic_arrow_drop_down_circle_black_48px.svg"]
+        },
+        {
+          "names": ["chart", "poll", "assesment"],
+          "icons": ["fa-chart1.svg", "fa-chart2.svg", "fa-chart3.svg", "fa-chart4.svg", "ic_poll_black_48px.svg"]
+        },
+        {
+          "names": ["check", "check box", "done", "done all"],
+          "icons": ["fa-check1.svg", "fa-check2.svg", "fa-check3.svg", "fa-check4.svg", "fa-check5.svg", "ic_check_black_48px.svg", "ic_check_box_black_24px.svg", "ic_check_circle_black_48px.svg", "ic_done_black_48px.svg", "ic_done_all_black_48px.svg"]
+        },
+        {
+          "names": ["clear all", "dehaze", "reorder"],
+          "icons": ["ic_clear_all_black_48px.svg", "ic_dehaze_black_48px.svg", "ic_reorder_black_48px.svg"]
+        },
+        {
+          "names": ["clock", "access time"],
+          "icons": ["fa-clock.svg", "ic_query_builder_black_48px.svg"]
+        },
+        {
+          "names": ["close", "cancel", "clear"],
+          "icons": ["fa-close1.svg", "fa-close2.svg", "fa-close3.svg", "ic_close_black_48px.svg", "ic_cancel_black_48px.svg"]
+        },
+        {
+          "names": ["cloud"],
+          "icons": ["fa-cloud1.svg", "fa-cloud2.svg", "fa-cloud3.svg", "ic_cloud_black_48px.svg", "ic_cloud_circle_black_48px.svg", "ic_cloud_done_black_48px.svg", "ic_cloud_download_black_48px.svg", "ic_cloud_off_black_48px.svg", "ic_cloud_queue_black_48px.svg", "ic_cloud_upload_black_48px.svg"]
+        },
+        {
+          "names": ["coffee"],
+          "icons": ["fa-coffee.svg"]
+        },
+        {
+          "names": ["cog", "gear", "settings"],
+          "icons": ["fa-gear1.svg", "fa-gear2.svg", "ic_settings_black_48px.svg", "ic_settings_applications_black_48px.svg"]
+        },
+        {
+          "names": ["comment", "sms", "chat", "message", "forum", "question answer"],
+          "icons": ["fa-comment1.svg", "fa-comment2.svg", "fa-comment3.svg", "fa-comment4.svg", "fa-comment5.svg", "fa-comment6.svg", "ic_comment_black_48px.svg", "ic_sms_black_48px.svg", "ic_chat_black_48px.svg", "ic_chat_bubble_black_48px.svg", "ic_chat_bubble_outline_black_48px.svg", "ic_forum_black_48px.svg"]
+        },
+        {
+          "names": ["credit card", "payment"],
+          "icons": ["fa-credit.svg", "ic_credit_card_black_48px.svg"]
+        },
+        {
+          "names": ["cutlery"],
+          "icons": ["fa-cutlery.svg"]
+        },
+        {
+          "names": ["delete", "trashcan"],
+          "icons": ["fa-trash1.svg", "fa-trash2.svg", "ic_delete_black_48px.svg"]
+        },
+        {
+          "names": ["dialpad"],
+          "icons": ["ic_dialpad_black_48px.svg"]
+        },
+        {
+          "names": ["download"],
+          "icons": ["fa-download.svg", "ic_file_download_black_48px.svg"]
+        },
+        {
+          "names": ["edit", "pencil", "create"],
+          "icons": ["fa-pencil1.svg", "fa-pencil2.svg", "fa-pencil3.svg", "ic_mode_edit_black_48px.svg"]
+        },
+        {
+          "names": ["eject"],
+          "icons": ["fa-eject.svg", "ic_eject_black_48px.svg"]
+        },
+        {
+          "names": ["ellipsis", "more"],
+          "icons": ["fa-ellipsis.svg", "fa-ellipsis2.svg", "ic_more_horiz_black_48px.svg", "ic_more_vert_black_48px.svg"]
+        },
+        {
+          "names": ["exchange"],
+          "icons": ["fa-exchange.svg"]
+        },
+        {
+          "names": ["expand", "compress", "fullscreen", "fullscreen exit"],
+          "icons": ["fa-expand.svg", "fa-compress.svg", "ic_fullscreen_black_48px.svg", "ic_fullscreen_exit_black_48px.svg"]
+        },
+        {
+          "names": ["eye", "visibility"],
+          "icons": ["fa-eye1.svg", "fa-eye2.svg", "ic_visibility_black_48px.svg", "ic_visibility_off_black_48px.svg"]
+        },
+        {
+          "names": ["file"],
+          "icons": ["fa-file1.svg", "fa-file2.svg", "fa-file3.svg", "fa-file4.svg", "fa-file5.svg", "fa-file6.svg", "fa-file7.svg", "fa-file8.svg", "ic_insert_drive_file_black_48px.svg"]
+        },
+        {
+          "names": ["film", "movie creation", "theatre"],
+          "icons": ["fa-film.svg", "ic_movie_black_48px.svg", "ic_theaters_black_48px.svg"]
+        },
+        {
+          "names": ["floppy", "save"],
+          "icons": ["fa-floppy.svg", "ic_save_black_48px.svg"]
+        },
+        {
+          "names": ["folder"],
+          "icons": ["fa-folder1.svg", "fa-folder2.svg", "fa-folder3.svg", "fa-folder4.svg", "ic_folder_black_48px.svg", "ic_folder_open_black_48px.svg", "ic_folder_shared_black_48px.svg", "ic_folder_special_black_48px.svg"]
+        },
+        {
+          "names": ["gift", "giftcard"],
+          "icons": ["fa-gift.svg", "ic_card_giftcard_black_48px.svg"]
+        },
+        {
+          "names": ["hearth", "favourite"],
+          "icons": ["fa-hearth1.svg", "fa-hearth2.svg", "fa-hearth3.svg", "ic_favorite_black_48px.svg", "ic_favorite_border_black_48px.svg"]
+        },
+        {
+          "names": ["home"],
+          "icons": ["fa-home.svg", "ic_home_black_48px.svg"]
+        },
+        {
+          "names": ["hourglass"],
+          "icons": ["fa-hourglass1.svg", "fa-hourglass2.svg", "fa-hourglass3.svg", "fa-hourglass4.svg", "ic_hourglass_empty_black_48px.svg", "ic_hourglass_full_black_48px.svg"]
+        },
+        {
+          "names": ["image", "photo size", "photo library"],
+          "icons": ["fa-image.svg", "ic_photo_black_48px.svg", "ic_photo_size_select_actual_black_48px.svg", "ic_photo_library_black_48px.svg"]
+        },
+        {
+          "names": ["indeterminate check box"],
+          "icons": ["ic_indeterminate_check_box_black_24px.svg"]
+        },
+        {
+          "names": ["info"],
+          "icons": ["fa-info1.svg", "fa-info2.svg", "ic_info_black_48px.svg", "ic_info_outline_black_48px.svg"]
+        },
+        {
+          "names": ["language"],
+          "icons": ["fa-language.svg", "ic_language_black_48px.svg"]
+        },
+        {
+          "names": ["list", "view list", "add playlist"],
+          "icons": ["fa-list1.svg", "fa-list2.svg", "fa-list3.svg", "fa-list4.svg", "ic_list_black_48px.svg", "ic_view_list_black_48px.svg", "ic_playlist_add_black_48px.svg"]
+        },
+        {
+          "names": ["map"],
+          "icons": ["fa-map1.svg", "fa-map2.svg", "ic_map_black_48px.svg"]
+        },
+        {
+          "names": ["map marker", "pin", "location"],
+          "icons": ["fa-marker1.svg", "fa-marker2.svg", "ic_location_on_black_48px.svg", "ic_location_off_black_48px.svg"]
+        },
+        {
+          "names": ["microphone"],
+          "icons": ["fa-mic.svg", "fa-mic2.svg", "ic_mic_black_48px.svg", "ic_mic_none_black_48px.svg", "ic_mic_off_black_48px.svg"]
+        },
+        {
+          "names": ["mood"],
+          "icons": ["fa-mood1.svg", "fa-mood2.svg", "fa-mood3.svg", "ic_mood_bad_black_48px.svg", "ic_mood_black_48px.svg"]
+        },
+        {
+          "names": ["moon", "brightness"],
+          "icons": ["fa-moon.svg", "ic_brightness_1_black_48px.svg", "ic_brightness_2_black_48px.svg", "ic_brightness_3_black_48px.svg"]
+        },
+        {
+          "names": ["music", "music library", "queue music"],
+          "icons": ["fa-music.svg", "ic_music_note_black_48px.svg", "ic_library_music_black_48px.svg", "ic_queue_music_black_48px.svg"]
+        },
+        {
+          "names": ["paperclip", "attachment"],
+          "icons": ["fa-paperclip.svg", "ic_attach_file_black_48px.svg"]
+        },
+        {
+          "names": ["pause"],
+          "icons": ["fa-pause.svg", "ic_pause_black_48px.svg", "ic_pause_circle_filled_black_48px.svg", "ic_pause_circle_outline_black_48px.svg"]
+        },
+        {
+          "names": ["phone", "call"],
+          "icons": ["fa-phone1.svg", "fa-phone2.svg", "ic_call_black_48px.svg", "ic_call_end_black_48px.svg"]
+        },
+        {
+          "names": ["play"],
+          "icons": ["fa-play1.svg", "fa-play2.svg", "fa-play3.svg", "ic_play_arrow_black_48px.svg", "ic_play_circle_filled_black_48px.svg", "ic_play_circle_outline_black_48px.svg"]
+        },
+        {
+          "names": ["portrait", "landscape"],
+          "icons": ["ic_portrait_black_48px.svg", "ic_landscape_black_48px.svg"]
+        },
+        {
+          "names": ["question", "help"],
+          "icons": ["fa-question1.svg", "fa-question2.svg", "ic_help_black_48px.svg", "ic_help_outline_black_48px.svg", "ic_live_help_black_48px.svg"]
+        },
+        {
+          "names": ["random", "shuffle"],
+          "icons": ["fa-random.svg", "ic_shuffle_black_48px.svg"]
+        },
+        {
+          "names": ["rectangle", "check box"],
+          "icons": ["fa-square.svg", "fa-square2.svg", "ic_check_box_outline_blank_black_24px.svg"]
+        },
+        {
+          "names": ["refresh", "renew", "loop", "repeat"],
+          "icons": ["fa-refresh.svg", "ic_autorenew_black_48px.svg", "ic_loop_black_48px.svg", "ic_repeat_black_48px.svg"]
+        },
+        {
+          "names": ["reply", "reply all"],
+          "icons": ["fa-reply.svg", "fa-reply2.svg", "ic_reply_black_48px.svg", "ic_reply_all_black_48px.svg"]
+        },
+        {
+          "names": ["rotate", "repeat", "replay", "refresh"],
+          "icons": ["fa-rotate.svg", "fa-play4.svg" "ic_refresh_black_48px.svg", "ic_replay_black_48px.svg"]
+        },
+        {
+          "names": ["search", "zoom"],
+          "icons": ["fa-search1.svg", "fa-search2.svg", "fa-search3.svg", "ic_zoom_in_black_48px.svg", "ic_zoom_out_black_48px.svg"]
+        },
+        {
+          "names": ["send"],
+          "icons": ["fa-send.svg", "fa-send2.svg", "ic_send_black_48px.svg"]
+        },
+        {
+          "names": ["share"],
+          "icons": ["fa-share1.svg", "fa-share2.svg", "fa-share3.svg", "fa-share4.svg", "fa-share5.svg", "ic_share_black_48px.svg"]
+        },
+        {
+          "names": ["shopping cart", "shopping basket", "shop"],
+          "icons": ["fa-shoppingcart1.svg", "fa-shoppingcart2.svg", "fa-shoppingcart3.svg", "fa-shoppingcart4.svg", "ic_shopping_cart_black_48px.svg", "ic_add_shopping_cart_black_48px.svg", "ic_shopping_basket_black_48px.svg", "ic_shop_black_48px.svg", "ic_shop_two_black_48px.svg"]
+        },
+        {
+          "names": ["sign in", "sign out"],
+          "icons": ["fa-signin.svg", "fa-signout.svg"]
+        },
+        {
+          "names": ["skip", "rewind", "forward", "fast forward"],
+          "icons": ["fa-step1.svg", "fa-step2.svg", "fa-forward1.svg", "fa-forward2.svg", "ic_skip_previous_black_48px.svg", "ic_fast_rewind_black_48px.svg", "ic_fast_forward_black_48px.svg", "ic_skip_next_black_48px.svg"]
+        },
+        {
+          "names": ["sliders"],
+          "icons": ["fa-sliders.svg"]
+        },
+        {
+          "names": ["star", "star rate", "grade"],
+          "icons": ["fa-star1.svg", "fa-star2.svg", "fa-star3.svg", "fa-star4.svg", "ic_star_black_48px.svg", "ic_star_border_black_48px.svg", "ic_star_half_black_48px.svg", "ic_stars_black_48px.svg"]
+        },
+        {
+          "names": ["stop"],
+          "icons": ["fa-stop.svg", "ic_stop_black_48px.svg"]
+        },
+        {
+          "names": ["sun", "brightness"],
+          "icons": ["fa-sun.svg", "ic_brightness_4_black_48px.svg", "ic_brightness_5_black_48px.svg", "ic_brightness_6_black_48px.svg", "ic_brightness_7_black_48px.svg"]
+        },
+        {
+          "names": ["tablet", "mobile", "smartphone", "android", "iPhone"],
+          "icons": ["fa-tablet.svg", "fa-mobile.svg", "ic_phone_android_black_48px.svg", "ic_phone_iphone_black_48px.svg", "ic_tablet_android_black_48px.svg", "ic_tablet_black_48px.svg", "ic_tablet_mac_black_48px.svg", "ic_smartphone_black_48px.svg"]
+        },
+        {
+          "names": ["tag"],
+          "icons": ["fa-tag1.svg", "fa-tag2.svg"]
+        },
+        {
+          "names": ["thumbs"],
+          "icons": ["fa-thumb1.svg", "fa-thumb2.svg", "fa-thumb3.svg", "fa-thumb4.svg", "ic_thumb_down_black_48px.svg", "ic_thumb_up_black_48px.svg", "ic_thumbs_up_down_black_48px.svg"]
+        },
+        {
+          "names": ["timer"],
+          "icons": ["ic_av_timer_black_48px.svg", "ic_timer_black_48px.svg"]
+        },
+        {
+          "names": ["user", "person", "identity", "group"],
+          "icons": ["fa-person1.svg", "fa-person2.svg", "fa-person3.svg", "fa-person4.svg", "fa-person5.svg", "fa-person6.svg", "ic_person_black_48px.svg", "ic_person_outline_black_48px.svg", "ic_person_add_black_48px.svg", "ic_people_outline_black_48px.svg", "ic_people_black_48px.svg", "ic_group_add_black_48px.svg"]
+        },
+        {
+          "names": ["videocamera"],
+          "icons": ["fa-videocamera.svg", "ic_videocam_black_48px.svg", "ic_videocam_off_black_48px.svg"]
+        },
+        {
+          "names": ["volume"],
+          "icons": ["fa-volume1.svg", "fa-volume2.svg", "fa-volume3.svg", "ic_volume_down_black_48px.svg", "ic_volume_mute_black_48px.svg", "ic_volume_off_black_48px.svg", "ic_volume_up_black_48px.svg"]
+        },
+        {
+          "names": ["warning", "exclamation", "report"],
+          "icons": ["fa-warning1.svg", "fa-warning2.svg", "fa-warning3.svg", "ic_warning_black_48px.svg", "ic_report_black_48px.svg"]
+        },
+        {
+          "names": ["widgets"],
+          "icons": ["ic_widgets_black_48px.svg"]
+        }
+
+      ]
+    },
+    {
+      "trademarks": [
+
+
+        {
+          "names": ["Amazon.com"],
+          "icons": ["fa-amazon.svg"]
+        },
+        {
+          "names": ["Android"],
+          "icons": ["fa-android.svg", "ic_android_black_48px.svg"]
+        },
+        {
+          "names": ["Apple"],
+          "icons": ["fa-apple.svg"]
+        },
+        {
+          "names": ["Bitcoin"],
+          "icons": ["fa-bitcoin.svg"]
+        },
+        {
+          "names": ["credit cards"],
+          "icons": ["fa-card1.svg", "fa-card2.svg", "fa-card3.svg", "fa-card4.svg", "fa-card5.svg", "fa-card6.svg", "fa-card7.svg"]
+        },
+        {
+          "names": ["Facebook"],
+          "icons": ["fa-fbook1.svg", "fa-fbook2.svg", "fa-fbook3.svg"]
+        },
+        {
+          "names": ["Instagram"],
+          "icons": ["fa-instagram.svg"]
+        },
+        {
+          "names": ["PayPal"],
+          "icons": ["fa-paypal1.svg", "fa-paypal2.svg"]
+        },
+        {
+          "names": ["Pinterest"],
+          "icons": ["fa-pinterest1.svg", "fa-pinterest2.svg", "fa-pinterest3.svg"]
+        },
+        {
+          "names": ["SoundCloud"],
+          "icons": ["fa-scloud.svg"]
+        },
+        {
+          "names": ["Spotify"],
+          "icons": ["fa-spotify.svg"]
+        },
+        {
+          "names": ["TripAdvisor"],
+          "icons": ["fa-tripadvisor.svg"]
+        },
+        {
+          "names": ["Tumblr"],
+          "icons": ["fa-tumblr.svg", "fa-tumblr2.svg"]
+        },
+        {
+          "names": ["Twitter"],
+          "icons": ["fa-twitter.svg", "fa-twitter2.svg"]
+        },
+        {
+          "names": ["Vimeo"],
+          "icons": ["fa-vimeo.svg"]
+        },
+        {
+          "names": ["WhatsApp"],
+          "icons": ["fa-whatsapp.svg"]
+        },
+        {
+          "names": ["Wikipedia"],
+          "icons": ["fa-wiki.svg"]
+        },
+        {
+          "names": ["YouTube"],
+          "icons": ["fa-ytube1.svg", "fa-ytube2.svg"]
+        }
+      ]
+    }
+  ]
+}

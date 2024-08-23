@@ -1,0 +1,129 @@
+.ticks {
+    font-size: 14.4px;
+}
+
+
+div.ToolTipArrow{
+    position: absolute; 
+    pointer-events: none; 
+    white-space: nowrap;
+    position:absolute;
+    left:510px;
+    top:120px; 
+    background-color: rgba(255, 255, 255, 0.92); 
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 2px 2px, rgba(0, 0, 0, 0.35) 0px 0px 1px; 
+    border-radius: 2px; 
+    text-align: center; 
+    font-size: 0.9em; 
+    padding: 8px;
+}
+
+.TimelineComponent {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1em;
+    padding: 0 1em;
+}
+
+
+
+.TimelineComponent .slider {
+    height: 4px;
+    flex-grow: 1;
+    background: #adb6c0;
+    border-radius: 5px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-left: 16px;
+    margin-right: 16px;
+    padding: 12px 0;
+}
+
+
+
+.TimelineComponent .handle>.icon {
+    height: 16px;
+    width: 16px;
+    border-radius: 100%;
+    background: #fff;
+    border: 1.5px solid #0073e6;
+    box-shadow: 0 2px 2px rgb(0 0 0 / 15%);
+    z-index: 1;
+    pointer-events: none;
+}
+
+
+
+.TimelineComponent .interval {
+    position: absolute;
+    height: 6px;
+    background: #0073e6;
+    cursor: grab;
+    padding: 10px 0;
+}
+
+
+
+.ControlsFooter .footerRowMulti, .ControlsFooter .footerRowSingle {
+    box-sizing: content-box;
+    width: 100%;
+    height: 32px;
+}
+
+.ControlsFooter .footerRowSingle>* {
+    width: 100%;
+}
+
+
+.ControlsFooter nav.tabs ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    width: 100%;
+    text-align: center;
+}
+
+div.sliderComponents{
+    display:flex;
+    justify-content:space-between;
+}
+
+div.LineChartSlider{
+    left:150px;
+    top:550px;
+    position:absolute;
+    border-radius: 2px;
+    text-align: center;
+    font-size: 0.9em;
+    padding: 8px;
+}
+
+div.LineChartSelectBox{
+    left:60px;
+    top:130px;
+    position:absolute;
+    border-radius: 2px;
+    text-align: center;
+    font-size: 0.9em;
+    padding: 8px;
+    scroll-behavior: auto;
+    display:block;
+    background-color: white;
+}
+
+
+div.ButtonFilter{
+    left:80px;
+    top:80px;
+    position:absolute;
+}
+
+fieldset {
+    width:400px;
+    height:420px;
+    overflow:auto;
+}

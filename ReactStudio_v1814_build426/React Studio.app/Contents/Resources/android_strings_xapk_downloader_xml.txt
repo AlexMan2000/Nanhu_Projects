@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="text_downloading_expansion_file">Downloading additional data...</string>
+    <string name="text_downloading_expansion_file_enable_cellular">Enable downloading over cellular connections?</string>
+    <string name="text_downloading_expansion_file_failed">Downloading failed</string>
+    <string name="text_downloading_expansion_file_paused">Downloading paused</string>
+    <string name="text_downloading_expansion_file_button_ok">Ok</string>
+    <string name="text_downloading_expansion_file_button_yes">Yes</string>
+    <string name="text_downloading_expansion_file_button_no">No</string>
+    <string name="text_downloading_expansion_file_button_resume">Resume</string>
+</resources>

@@ -1,0 +1,51 @@
+{{HEAD_COMMENT}}
+package {{PACKAGE_ID}};
+
+import android.app.Activity;
+import android.app.ActionBar;
+import android.app.Fragment;
+import android.os.Bundle;
+import android.view.KeyEvent;
+import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.view.ViewGroup;
+import android.view.WindowManager;
+
+import {{PACKAGE_ID}}.R;
+
+public class {{ACTIVITY_NAME}} extends {{ACTIVITY_CLASS}} {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+{{ONCREATE_CODE}}
+        setContentView(R.layout.activity_{{ACTIVITY_NAME_UNDERSCORED}});
+        if (savedInstanceState == null) {
+            getFragmentManager().beginTransaction()
+                    .add(R.id.container, new {{FRAGMENT_NAME}}())
+                    .commit();
+        }
+
+        setTitle({{TITLE}});
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+{{ONSTART_CODE}}    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        setupUiVisibility();
+    }
+
+    private void setupUiVisibility() {
+{{SETUPUIVISIBILITY_CODE}}    }
+
+
+{{ACTIVITY_EXTRA_METHODS}}
+}

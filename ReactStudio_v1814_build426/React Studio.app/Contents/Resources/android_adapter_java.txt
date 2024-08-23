@@ -1,0 +1,92 @@
+package {{PACKAGE_ID}};
+
+import android.app.Activity;
+import android.app.Fragment;
+import android.content.Context;
+import android.util.DisplayMetrics;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.BaseAdapter;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+
+public class {{ADAPTER_NAME}} extends BaseAdapter {
+
+    public int[] filteredRows;
+
+    private DataSheet mDataSheet;
+    private HashMap<String, HashMap<String, ArrayList<LayoutDesc>>> mOverrideElementLayoutDescriptors;
+
+    private Fragment mOwner;
+
+    public {{ADAPTER_NAME}}(Fragment owner) {
+        mOwner = owner;
+    }
+
+    private Activity getActivity() {
+        return mOwner.getActivity();
+    }
+{{ADDITIONAL_METHODS}}
+    @Override
+    public int getCount() {
+{{GET_COUNT_METHOD}}
+    }
+
+    @Override
+    public HashMap<String, HashMap<String, Object>> getItem(int position) {
+{{GET_ITEM_METHOD}}
+    }
+
+    @Override
+    public long getItemId(int position) {
+{{GET_ITEM_ID_METHOD}}
+    }
+
+    @Override
+    public View getView(int position, View convertView, ViewGroup parent) {
+        AdapterView view = (AdapterView) convertView;
+{{GETVIEW_CONSTANTS}}
+        Class viewClass = {{VIEW_CLASS}};
+        if (view == null || !viewClass.isInstance(view)) {
+            try {
+                view = (AdapterView) viewClass.getConstructor(Fragment.class).newInstance(mOwner);
+            }
+            catch (Exception e) {
+                e.printStackTrace();
+                return null;
+            }
+
+            view.setOnContentChangeListener(new AdapterView.OnContentChangeListener() {
+                @Override
+                public void onContentChange() {
+                    notifyDataSetChanged();
+                }
+            });
+        }
+
+{{TAKE_VALUES_FROM_DATA_SHEET}}
+
+{{LAYOUT_CODE}}
+
+        return (View) view;
+    }
+
+    public DataSheet getDataSheet() {
+        return mDataSheet;
+    }
+
+    public void setDataSheet(DataSheet d) {
+        mDataSheet = d;
+    }
+
+    public void setOverrideElementLayoutDescriptors(HashMap<String, HashMap<String, ArrayList<LayoutDesc>>> d)
+    {
+        mOverrideElementLayoutDescriptors = d;
+    }
+
+    public int getColumnWidth() {
+{{COLUMN_WIDTH}}
+    }
+
+}

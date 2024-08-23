@@ -1,0 +1,28 @@
+    public static interface IDataSlotChangeListener {
+        public void dataSlotUpdated(String name);
+    }
+
+    private static HashSet<IDataSlotChangeListener> mListeners = new HashSet<IDataSlotChangeListener>();
+
+    public static void addListener(IDataSlotChangeListener listener)
+    {
+        if (listener != null) {
+            mListeners.add(listener);
+        }
+    }
+
+    public static void removeListener(IDataSlotChangeListener listener)
+    {
+        if (listener != null) {
+            mListeners.remove(listener);
+        }
+    }
+
+    public static void notifyDataSlotModified(String name)
+    {
+        // Copy listeners in case array gets modified by a listener during notification
+        Set<IDataSlotChangeListener> listeners = (Set<IDataSlotChangeListener>) mListeners.clone();
+        for (IDataSlotChangeListener listener : listeners) {
+            listener.dataSlotUpdated(name);
+        }
+    }

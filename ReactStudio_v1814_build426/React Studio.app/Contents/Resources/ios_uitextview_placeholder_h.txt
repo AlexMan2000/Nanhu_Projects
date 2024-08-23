@@ -1,0 +1,8 @@
+#import <UIKit/UIKit.h>
+
+@interface {{CLASS_NAME}}
+
+@property (nonatomic) NSString *placeholder;
+@property (nonatomic) UIColor *placeholderColor;
+
+@end

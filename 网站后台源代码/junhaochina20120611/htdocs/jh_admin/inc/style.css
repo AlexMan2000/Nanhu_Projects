@@ -1,0 +1,24 @@
+A{TEXT-DECORATION: none}
+A:link {COLOR: #666666; FONT-FAMILY: 宋体; TEXT-DECORATION: none}
+A:visited {COLOR: #666666; FONT-FAMILY: 宋体; TEXT-DECORATION: none}
+A:active {FONT-FAMILY: 宋体; TEXT-DECORATION: none}
+A:hover {BORDER-BOTTOM: 1px dotted; BORDER-LEFT-WIDTH: 1px; BORDER-RIGHT-WIDTH: 1px; BORDER-TOP-WIDTH: 1px; COLOR: #ff6600; TEXT-DECORATION: none}
+BODY {
+background-position:center;
+FONT-SIZE: 9pt;
+COLOR: #666666;
+FONT-FAMILY:  宋体;
+background-color: #ffffff;
+SCROLLBAR-FACE-COLOR: #e8e7e7; 
+SCROLLBAR-HIGHLIGHT-COLOR: #ffffff; 
+SCROLLBAR-SHADOW-COLOR: #ffffff; 
+SCROLLBAR-3DLIGHT-COLOR: #cccccc; 
+SCROLLBAR-ARROW-COLOR: #ff6600; 
+SCROLLBAR-TRACK-COLOR: #EFEFEF; 
+SCROLLBAR-DARKSHADOW-COLOR: #b2b2b2; 
+SCROLLBAR-BASE-COLOR: #000000
+}
+TABLE {BORDER-COLLAPSE: collapse; FONT-FAMILY: 宋体; FONT-SIZE: 9pt}
+.button{height:18px;width:50px;background:#f6f6f9 url(../img/ButtonBg.gif); border:solid 1px #5589AA;color: #000000 ;FONT-SIZE: 9pt}
+.lanyu{border:solid 1px #5589AA;color: #000000 ; font-size: 12px;}
+.font {  filter: DropShadow(Color=#cccccc, OffX=2, OffY=1, Positive=2); text-decoration: none; font-size: 9pt}

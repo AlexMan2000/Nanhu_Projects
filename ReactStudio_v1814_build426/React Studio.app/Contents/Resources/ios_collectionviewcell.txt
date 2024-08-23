@@ -1,0 +1,21 @@
+
+// A wrapper for using this view controller as a cell in a UICollectionView
+
+@implementation {{CLASSNAME_CELL}}
+
+- (id)initWithFrame:(CGRect)frame
+{
+    {{CLASSNAME_CONTAINED}} *vc = [[{{CLASSNAME_CONTAINED}} alloc] initWithNibName:nil bundle:nil];
+    UIView *contentView = vc.view;
+    
+    self = [super initWithFrame:contentView.frame];
+
+    [self.contentView addSubview:contentView];
+    
+    self.clipsToBounds = YES;
+    self.containedViewController = vc;
+    
+    return self;
+}
+
+@end
